@@ -20,6 +20,6 @@ function deleteByEmail() {
         }
     }
     emailInput.value = ''
-
+    
 
 }
