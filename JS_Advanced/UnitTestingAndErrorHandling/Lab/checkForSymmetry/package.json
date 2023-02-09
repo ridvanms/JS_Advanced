@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chai": "^4.3.7"
+  },
+  "name": "checkforsymmetry",
+  "version": "1.0.0",
+  "main": "checker.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
