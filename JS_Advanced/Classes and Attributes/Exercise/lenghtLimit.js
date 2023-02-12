@@ -1,26 +1,26 @@
 function lenghtLimit(){
-    class Stringer{
-        constructor(str,initialLength){
-            this.str = str,
-            this.initialLength = initialLength
+    class Stringer {
+        constructor(innerString, innerLength) {
+            this.innerString = innerString;
+            this.innerLength = innerLength;
         }
-        increase(num){
-            this.initialLength += num
-            
+        increase(length) { 
+            this.innerLength += length; 
         }
-        decrease(num){
-            this.initialLength -= num
-            if(this.initialLength < 0)this.initialLength = 0
-        }
-        toString(){
-            if(this.str.length > this.initialLength){
-                return `${this.str.slice(0,this.initialLength)}...`
+        decrease(length) { 
+            this.innerLength -= length;
+            if (this.innerLength < 0) { 
+                this.innerLength = 0;              
             }
-            if(this.initialLength === 0){
-                return `...`
+        }
+        toString() { 
+            if (this.innerString.length > this.innerLength) {
+                return `${this.innerString.slice(0, this.innerLength)}...`;
             }
-            return this.str
-            
+            if (this.innerLength === 0) {
+                return `...`;  
+            }
+            return this.innerString;                           
         }
     }
     let test = new Stringer("Test", 5);
