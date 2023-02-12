@@ -1,25 +1,26 @@
-function tickets(arr,criteria){
-    class Ticket{
-        constructor(destination,price,status){
-            this.destination = destination,
-            this.price = price,
-            this.status = status
+function tickets(arr,criteria) {
+    class Ticket {
+        constructor(destination, price, status) {
+            this.destination = destination;         
+            this.price = Number(price);
+            this.status = status;
         }
     }
-    let tickets = []
-
-    while(arr[0] !== undefined){
-        let line = arr.shift();
-        let [destination,price,status] = line.split('|')
-
-        tickets.push(new Ticket(destination,price,status))
+    let tickets = [];
+    while (arr[0] !== undefined) { 
+        let line = arr.shift(); 
+        let [destination, price, status] = line.split("|"); 
+        let ticket = new Ticket(destination, price, status); 
+        tickets.push(ticket);
     }
-    if(criteria === 'price'){
-        tickets.sort((a,b)=> a[criteria] - b[criteria])
-    }else{
-        tickets.sort((a,b)=>a[criteria].localeCompare(b[criteria]))
+
+    if (criteria === 'price') { 
+        tickets.sort((a, b) => a[criteria] - (b[criteria]));
+    } else {
+        tickets.sort((a, b) => a[criteria].localeCompare(b[criteria])); 
     }
-    return tickets
+
+    return tickets;   
 }
 tickets(
     [

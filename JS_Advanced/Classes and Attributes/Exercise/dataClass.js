@@ -1,11 +1,10 @@
 function dataClass(){
-    class Request{
-        
-        constructor(method,url,version,message){
-            this.method = method,
-            this.url = url,
-            this.version = version,
-            this.message = message
+    class Request {
+        constructor(method, uri, version, message) {
+            this.method = method;
+            this.uri = uri;
+            this.version = version;
+            this.message = message;
             this.response = undefined;
             this.fulfilled = false;
         }
