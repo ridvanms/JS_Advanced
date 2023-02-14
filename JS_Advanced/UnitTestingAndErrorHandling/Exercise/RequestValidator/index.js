@@ -30,4 +30,3 @@ function requestValidator(obj) {
 
     return obj;         // Ако няма грешка през 4-те провери, връщаме получения обект 
 }
-module.export = requestValidator
