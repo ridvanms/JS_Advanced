@@ -7,8 +7,8 @@ class CarDealership {
     }
     addCar(model,horsepower,price,mileage){
         
-        if(!model || horsepower < 0 || price < 0 || mileage < 0){
-            throw new Error('Invalid input!')
+        if (model === "" || horsepower < 0 || price < 0 || mileage < 0) {
+            throw new Error("Invalid input!");
         }
 
         this.availableCars.push({model,horsepower,price,mileage})
@@ -20,9 +20,8 @@ class CarDealership {
         let car = this.availableCars.find(el => el.model === model)
         if(!car)throw new Error(`${model} was not found!`)
 
-        if(car.mileage <= desiredMileage){
-            car.price = car.price
-        }else if(car.mileage - desiredMileage <= 40000){
+        
+        if(car.mileage - desiredMileage <= 40000){
             car.price *= 0.95;
         }else if(car.mileage - desiredMileage > 40000){
             car.price *= 0.90;
@@ -63,6 +62,7 @@ class CarDealership {
             result.push(`---${car.model} - ${car.horsepower} HP - ${car.soldPrice.toFixed(2)}$`));
         return result.join("\n");
     }
+   
 }
 // let dealership = new CarDealership('SoftAuto');
 // console.log(dealership.addCar('Toyota Corolla', 100, 3500, 190000));
