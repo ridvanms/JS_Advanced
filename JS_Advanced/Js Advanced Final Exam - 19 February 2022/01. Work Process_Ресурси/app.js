@@ -58,15 +58,13 @@ function solve() {
             tr.remove();
         })
         tbody.appendChild(tr)
-
+        
         fnameInput.value = ''
         lnameInput.value = ''
         emailInput.value = ''
         birthInput.value = ''
         positionInput.value = ''
         salaryInput.value = ''
-
     }
-   
 }
 solve()
