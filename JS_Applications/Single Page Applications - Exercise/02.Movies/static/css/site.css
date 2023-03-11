@@ -20,7 +20,7 @@
 
 .enrolled-span {
     text-decoration: underline;
-    background-color: green;
+    background-color: rgb(247, 250, 247);
     color: white;
     padding: 2%;
     border-radius: 4px;
@@ -37,5 +37,74 @@
     color: white;
     font-style: italic;
     text-decoration: underline;
-    box-shadow: 0 5px 10px #cccccc;
+    box-shadow: 0 5px 10px #bbb8b8;
 }
+/* 
+    For spinner 
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+
+body {
+  background: rgb(133, 132, 134);
+  background: linear-gradient(
+    322deg,
+    rgb(190, 188, 192) 20%,
+    rgb(184, 185, 181) 100%
+  );
+}
+
+
+
+.title-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  width: 50%;
+  max-width: 10rem;
+  animation: rotate 3.6s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 8px;
+  stroke-dasharray: 300;
+  animation: outline 2s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+}
+
+@keyframes outline {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 600;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
