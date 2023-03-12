@@ -19,9 +19,9 @@
 }
 
 .enrolled-span {
-    text-decoration: underline;
-    background-color: rgb(247, 250, 247);
-    color: white;
+    text-decoration: none;
+    background-color: rgb(95, 168, 95);
+    color: rgb(5, 82, 34);
     padding: 2%;
     border-radius: 4px;
 }

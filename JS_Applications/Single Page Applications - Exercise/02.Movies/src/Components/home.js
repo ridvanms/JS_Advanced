@@ -1,7 +1,16 @@
 import { showView } from "./util.js";
+import { detailsPage } from "./details.js";
 
 const homeSelection = document.querySelector("#home-page");
-const catalog = homeSelection.querySelector(".card-deck");
+
+const catalog = document.getElementById("movies-list");
+catalog.addEventListener("click", (event) => {
+  if (event.target.tagName == "BUTTON") {
+    event.preventDefault();
+    const id = event.target.dataset.id;
+    detailsPage(id);
+  }
+});
 
 export function homePage() {
   showView(homeSelection);
@@ -10,12 +19,14 @@ export function homePage() {
 
 async function displayMovies() {
   catalog.innerHTML = spinner();
+
   setTimeout(async () => {
     const movies = await getMovies();
+
     catalog.replaceChildren(...movies.map(createMoviePreview));
   }, 2000);
 }
-function spinner() {
+export function spinner() {
   return `
   <div class="title-container">
     <div class="spinner">
@@ -38,8 +49,8 @@ function createMoviePreview(movie) {
       <h4 class="card-title">${movie.title}</h4>
     </div>
     <div class="card-footer">
-      <a data-id="${movie._id}" href="/details/${movie._id}">
-        <button type="button" class="btn btn-info">Details</button>
+      <a  href="/details/${movie._id}">
+        <button data-id="${movie._id}" type="button" class="btn btn-info">Details</button>
       </a>
     </div>
   `;
