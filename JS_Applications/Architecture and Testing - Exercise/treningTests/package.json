@@ -1,0 +1,16 @@
+{
+  "name": "treningtests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "playwright-chromium": "^1.31.2"
+  }
+}

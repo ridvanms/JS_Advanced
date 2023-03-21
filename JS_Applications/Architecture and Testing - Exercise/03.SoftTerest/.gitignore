@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 node_modules/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+=======
+node_modules
+>>>>>>> e0b9c365626621c6a25108395568871fd7a7459d
