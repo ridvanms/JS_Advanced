@@ -18,7 +18,7 @@ const cardTemplate = (music) => html`<li class="card">
     <strong>Singer/Band: </strong><span class="singer">${music.singer}</span>
   </p>
   <p><strong>Album name: </strong><span class="album">${music.album}</span></p>
-  <p><strong>Sales:</strong><span class="sales">${music.sales})</span></p>
+  <p><strong>Sales:</strong><span class="sales">${music.sales}</span></p>
   <a class="details-btn" href="/catalog/${music._id}">Details</a>
 </li>`;
 

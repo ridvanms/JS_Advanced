@@ -14,12 +14,12 @@ export const layoutTemplate = (userData, content) => html`
       <!-- Logged-in users -->
       ${userData
         ? html`<div class="user">
-            <a href="/addAlbum">Add Album</a>
-            <a href="/Logout">Logout</a>
+            <a href="/create">Add Album</a>
+            <a href="/logout">Logout</a>
           </div>`
         : html`<div class="guest">
-            <a href="/Login">Login</a>
-            <a href="/Register">Register</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
           </div>`}
     </nav>
   </header>

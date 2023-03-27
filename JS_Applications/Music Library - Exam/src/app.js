@@ -14,20 +14,19 @@ import { addAlbumPage } from "./Views/addMusic.js";
 import { detailsPage } from "./Views/details.js";
 import { editPage } from "./Views/edit.js";
 
-// TODO change render root depending on project HTML structure
 const root = document.getElementById("wrapper");
 
 page(decorateContext);
 
 page("index.html", "/");
 page("/", homePage);
-page("/Login", loginPage);
-page("/Register", registerPage);
-page("/Logout", logoutAction);
+page("/login", loginPage);
+page("/register", registerPage);
+page("/logout", logoutAction);
 page("/catalog", dashboardPage);
 page("/catalog/:id", detailsPage);
 page("/catalog/:id/edit", editPage);
-page("/addAlbum", addAlbumPage);
+page("/create", addAlbumPage);
 
 page.start();
 

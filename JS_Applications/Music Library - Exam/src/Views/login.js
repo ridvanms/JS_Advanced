@@ -28,6 +28,7 @@ export function loginPage(ctx) {
 
   // TODO Change user object based on requirements
   async function onLogin({ email, password }, form) {
+    if (email == "" || password == "") return alert("All fields are required");
     await login(email, password);
     form.reset();
     //TODO use redirect location from requirements
