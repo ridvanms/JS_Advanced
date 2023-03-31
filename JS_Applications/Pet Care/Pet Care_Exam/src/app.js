@@ -13,7 +13,10 @@ import { editPage } from "./Views/edit.js";
 import { searchPage } from "./Views/search.js";
 
 // TODO change render root depending on project HTML structure
-const root = document.getElementById("wrapper");
+const root = document.body;
+
+import * as api from "./data/donations.js";
+window.api = api;
 
 page(decorateContext);
 
@@ -45,5 +48,3 @@ function logoutAction(ctx) {
   logout();
   ctx.page.redirect("/");
 }
-
-//keep shoes id

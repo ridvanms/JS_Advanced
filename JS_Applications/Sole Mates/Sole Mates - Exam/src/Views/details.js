@@ -36,11 +36,11 @@ const detailsTemplate = (data, onDelete) => html`
 export async function detailsPage(ctx) {
   const id = ctx.params.id;
   const form = await offer.getById(id);
-  form.isOwner = false;
 
   const user = getUserData();
-
-  if (user && user._id == form._ownerId) form.isOwner = true;
+  if (user) {
+    form.isOwner = user._id == form._ownerId;
+  }
 
   ctx.render(detailsTemplate(form, onDelete));
 

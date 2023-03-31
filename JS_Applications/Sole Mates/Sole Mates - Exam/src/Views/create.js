@@ -37,6 +37,9 @@ export const createPage = async (ctx) => {
   ctx.render(createTemplate(createSubmitHandler(onCreate)));
 
   async function onCreate(data) {
+    const { brand, model, imageUrl, release, designer, value } = data;
+    if ([brand, model, imageUrl, release, designer, value].some((f) => f == ""))
+      return alert("All fields are required");
     await createShoes(data);
     ctx.page.redirect("/catalog");
   }
