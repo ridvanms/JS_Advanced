@@ -20,4 +20,3 @@ export async function updateShoes(id, data) {
 export async function deleteShoes(id) {
   return del(endpoints.byId + id);
 }
-

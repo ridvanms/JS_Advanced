@@ -63,6 +63,9 @@ export async function editPage(ctx) {
   ctx.render(editTemplate(form, createSubmitHandler(onEdit)));
 
   function onEdit(data) {
+    const { brand, model, imageUrl, release, designer, value } = data;
+    if ([brand, model, imageUrl, release, designer, value].some((f) => f == ""))
+      return alert("All fields are required!");
     shoes.updateShoes(id, data);
     ctx.page.redirect(`/details/${id}`);
   }

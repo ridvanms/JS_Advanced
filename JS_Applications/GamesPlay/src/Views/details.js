@@ -8,44 +8,41 @@ import * as offer from "../data/offers.js";
 import { getUserData } from "../util.js";
 
 const detailsTemplate = (data, onDelete, onDonate) => html`
-  <section id="detailsPage">
-    <div class="details">
-      <div class="animalPic">
-        <img src=${data.image} />
+  <section id="game-details">
+    <h1>Game Details</h1>
+    <div class="info-section">
+      <div class="game-header">
+        <img class="game-img" src=${data.imageUrl} />
+        <h1>${data.title}</h1>
+        <span class="levels">MaxLevel: ${data.maxLevel}</span>
+        <p class="type">${data.category}</p>
       </div>
-      <div>
-        <div class="animalInfo">
-          <h1>Name: ${data.name}</h1>
-          <h3>Breed: ${data.breed}</h3>
-          <h4>Age: ${data.age}</h4>
-          <h4>Weight: ${data.weight}</h4>
-          <h4 class="donation">Donation: ${data.donations}$</h4>
-        </div>
 
-        ${data.isOwner || data.canDonate
-          ? html`<div class="actionBtn">
-              ${data.isOwner
-                ? html`<a href="/edit/${data._id}" class="edit">Edit</a>
-                    <a
-                      @click=${onDelete}
-                      href="javascript:void(0)"
-                      class="remove"
-                      >Delete</a
-                    >`
-                : html`${data.canDonate
-                    ? html` <a
-                        @click=${onDonate}
-                        href="javascript:void(0)"
-                        class="donate"
-                        >Donate</a
-                      >`
-                    : nothing}`}
-            </div>`
-          : nothing}
+      <p class="text">${data.summary}</p>
+
+      <!-- Bonus ( for Guests and Users ) -->
+      <div class="details-comments">
+        <h2>Comments:</h2>
+        <ul>
+          // TODO -
+        </ul>
+        <!-- Display paragraph: If there are no games in the database -->
+        <p class="no-comment">No comments.</p>
+      </div>
+
+      <!-- Edit/Delete buttons ( Only for creator of this game )  -->
+      <div class="buttons">
+        <a href="/edit/${data._id}" class="button">Edit</a>
+        <a @click=${onDelete} href="javascript:void(0)" class="button"
+          >Delete</a
+        >
       </div>
     </div>
   </section>
 `;
+const commentsTemplate = (content) => html`<li class="comment">
+  <p>Content: ${content}</p>
+</li>`;
 
 // <a @click=${onDelete} href="javascript:void(0)" id="delete-btn"
 export async function detailsPage(ctx) {

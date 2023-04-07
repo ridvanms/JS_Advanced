@@ -1,5 +1,6 @@
 import { html, nothing } from "../../node_modules/lit-html/lit-html.js";
-import { getAllShoes } from "../data/offers.js";
+import { getAllGames } from "../data/offers.js";
+
 import { searchByText } from "../data/searchService.js";
 import { createSubmitHandler, getUserData } from "../util.js";
 
@@ -41,7 +42,7 @@ const cardTemplate = (card, user) => html`<li class="card">
 </li>`;
 
 export async function searchPage(ctx) {
-  let form = await getAllShoes();
+  let form = await getAllGames();
   const userData = getUserData();
   function update() {
     ctx.render(searchTemplate(createSubmitHandler(onSearch), userData, form));

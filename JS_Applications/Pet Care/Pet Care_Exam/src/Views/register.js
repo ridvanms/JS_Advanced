@@ -2,8 +2,6 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { register } from "../data/auth.js";
 import { createSubmitHandler } from "../util.js";
 
-// TODO Replace with actual view
-
 const registerTemplate = (onRegister) => html`
   <section id="registerPage">
     <form @submit=${onRegister} class="registerForm">

@@ -46,7 +46,9 @@ export async function detailsPage(ctx) {
 
   async function onDelete() {
     const choice = confirm("Are you sure?");
-    if (choice) await offer.deleteShoes(id);
-    ctx.page.redirect("/catalog");
+    if (choice) {
+      await offer.deleteShoes(id);
+      ctx.page.redirect("/catalog");
+    }
   }
 }
