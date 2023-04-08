@@ -6,7 +6,7 @@ import { logout } from "./data/auth.js";
 import { getUserData } from "./util.js";
 
 import { layoutTemplate } from "./Views/layout.js";
-import { homePage } from "./Views/home.js";
+import { homePage } from "./Views/home/home.js";
 import { loginPage } from "./Views/login.js";
 import { registerPage } from "./Views/register.js";
 import { catalogPage } from "./Views/dashboard.js";

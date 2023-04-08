@@ -38,7 +38,6 @@ const registerTemplate = (onRegister) => html`
 export function registerPage(ctx) {
   ctx.render(registerTemplate(createSubmitHandler(onRegister)));
 
-  // TODO Change user object based on requirements
   async function onRegister(
     { email, password, "confirm-password": repass },
     form

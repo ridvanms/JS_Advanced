@@ -2,7 +2,6 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 
 export const layoutTemplate = (userData, content) => html`
   <header>
-            <!-- Navigation -->
             <h1><a class="home" href="/">GamesPlay</a></h1>
             <nav>
                 <a href="/catalog">All games</a>
