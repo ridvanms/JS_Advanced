@@ -5,7 +5,7 @@ import { logout } from "./data/auth.js";
 
 import { getUserData } from "./util.js";
 
-import { layoutTemplate } from "./Views/layout.js";
+import { layoutTemplate } from "./Views/layout/layout.js";
 import { homePage } from "./Views/home/home.js";
 import { loginPage } from "./Views/login.js";
 import { registerPage } from "./Views/register.js";
@@ -15,7 +15,7 @@ import { detailsPage } from "./Views/details.js";
 import { editPage } from "./Views/edit.js";
 import { searchPage } from "./Views/search.js";
 
-const root = document.getElementById("box");
+const root = document.body;
 
 page(decorateContext);
 
@@ -33,7 +33,6 @@ page.start();
 
 function decorateContext(ctx, next) {
   ctx.render = renderView;
-
   next();
 }
 
