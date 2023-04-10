@@ -1,21 +1,22 @@
 import { html } from "../../../node_modules/lit-html/lit-html.js";
 import { getNewGames } from "../../data/offers.js";
+import { typing } from "./typeAnimation.js";
 
 const homeTemplate = (cards) => html`
   <section @no id="welcome-world">
-    <div
-      class="welcome-message animate__animated animate__lightSpeedInRight animate__delay-1s"
-    >
+    <div class="welcome-message magictime spaceInLeft">
       <h2>ALL new games are</h2>
       <h3>Only in GamesPlay</h3>
     </div>
     <img
-      class="animate__animated animate__zoomInDown"
+      class="hero animate__animated animate__backInLeft animate__delay-1s"
       src="./images/four_slider_img01.png"
       alt="hero"
     />
+
     <div id="home-page">
       <h1>Latest Games</h1>
+
       ${cards.length
         ? html` ${cards.map((c) => cardTemplate(c))}`
         : html`<p class="no-articles">No games yet</p>`}
@@ -24,7 +25,6 @@ const homeTemplate = (cards) => html`
 `;
 const showLatestGames = (cards) => html`
   <div id="home-page">
-    <h1>Latest Games</h1>
     ${cards.length
       ? html` ${cards.map((c) => cardTemplate(c))}`
       : html`<p class="no-articles">No games yet</p>`}
@@ -44,8 +44,10 @@ const cardTemplate = (card) => html`
     </div>
   </div>
 `;
+
 export async function homePage(ctx) {
   const form = await getNewGames();
+
 
   ctx.render(homeTemplate(form));
 }

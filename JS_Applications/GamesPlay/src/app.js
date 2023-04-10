@@ -40,6 +40,18 @@ function decorateContext(ctx, next) {
 function renderView(content) {
   const userData = getUserData();
   render(layoutTemplate(userData, content), root);
+
+  document.querySelector("header").addEventListener("click", (e) => {
+    let list = document.querySelector("header").querySelectorAll("a");
+    if (list.length) {
+      list.forEach((el) => {
+        el.classList.remove("animate__animated", "animate__jello");
+      });
+    }
+    if (e.target.tagName === "A") {
+      e.target.classList.add("animate__animated", "animate__jello");
+    }
+  });
 }
 
 function logoutAction(ctx) {
