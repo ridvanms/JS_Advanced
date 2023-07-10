@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^14.1.1",
     "lit-html": "^2.7.5",
+    "lite-server": "^2.6.1",
+    "magic.css": "^1.4.8",
+    "page": "^1.11.6",
     "page.js": "^4.13.3"
   }
 }
