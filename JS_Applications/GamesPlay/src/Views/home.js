@@ -1,6 +1,6 @@
-import { html } from "../../../node_modules/lit-html/lit-html.js";
-import { getNewGames } from "../../data/offers.js";
-import { footerTemplate } from "../layout/footer.js";
+import { html } from "../../node_modules/lit-html/lit-html.js";
+import { getNewGames } from "../data/offers.js";
+import { footerTemplate } from "./layout/footer.js";
 
 const homeTemplate = (cards) => html`
   <section @no id="welcome-world">
